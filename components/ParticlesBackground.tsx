@@ -1,11 +1,12 @@
 "use client";
-import Particles from "react-tsparticles";
-import { loadLinksPreset } from "tsparticles-preset-links";
+import { Particles } from "@tsparticles/react";
+import { loadLinksPreset } from "@tsparticles/preset-links";
 import { useCallback } from "react";
 
 export default function ParticlesBackground() {
   const particlesInit = useCallback(async (engine: any) => {
-    await loadLinksPreset(engine); // aqui passamos o engine corretamente
+    // carrega o preset "links" corretamente
+    await loadLinksPreset(engine);
   }, []);
 
   return (
@@ -31,7 +32,7 @@ export default function ParticlesBackground() {
             },
             number: {
               value: 60,
-              density: { enable: true, area: 800 },
+              density: { enable: true, area: 800 } as any,
             },
             opacity: { value: 0.7 },
             shape: { type: "circle" },
