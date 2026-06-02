@@ -20,7 +20,7 @@ const shimmerStyle = `
 export default function Hero() {
   return (
     <section
-      className="relative text-white text-center h-screen bg-black overflow-hidden flex flex-col items-center justify-center"
+      className="relative text-white text-center min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center"
     >
       {/* Injetando estilo shimmer */}
       <style>{shimmerStyle}</style>
@@ -54,12 +54,10 @@ export default function Hero() {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="relative z-10 flex flex-col items-center px-4"
       >
-        {/* Título com shimmer branco */}
         <h1 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg text-shimmer">
           Olá, eu sou Caio
         </h1>
 
-        {/* Subtítulo com typing loop mostrando frases completas */}
         <p className="text-white text-base md:text-lg max-w-2xl px-4 leading-relaxed">
           <Typewriter
             words={[

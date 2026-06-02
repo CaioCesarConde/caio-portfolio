@@ -19,6 +19,11 @@ export const metadata = {
   },
 };
 
+// ✅ Theme-color agora está apenas no viewport
+export const viewport = {
+  themeColor: "#111827", // cinza-escuro que combina com o degradê
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
