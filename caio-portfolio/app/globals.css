@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@import "aos/dist/aos.css";
+
+/* ===== Tema base ===== */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ===== Base ===== */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  /* Fallback de cursor para desktop; em touch será desativado abaixo */
+  cursor: auto;
+}
+
+/* ===== Animações de texto ===== */
+
+/* Fade-in suave com leve subida */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeUp {
+  display: inline-block;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Oscilação leve (onda) */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-wave {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Flutuação suave */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ===== Scrollbar customizada ===== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #fff #000;
+}
+
+/* ===== Responsividade de cursor (touch) ===== */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* ===== Projetos responsivos ===== */
+.projetos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.projeto-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #d4af37; /* dourado */
+  border-radius: 10px;
+  padding: 16px;
+  transition: transform 0.2s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+}
+
+.projeto-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .projetos-container {
+    grid-template-columns: 1fr; /* uma coluna só */
+    padding: 10px;
+  }
+
+  .projeto-card {
+    margin-bottom: 15px;
+  }
+
+  .projeto-card h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .projeto-card p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
