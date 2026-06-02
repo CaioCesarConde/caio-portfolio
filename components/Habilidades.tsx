@@ -11,7 +11,7 @@ import {
   Box,
   Shield,
 } from "lucide-react";
-import Particles from "react-tsparticles";
+import { Particles } from "@tsparticles/react";
 
 export default function Habilidades() {
   const linguagens = [
@@ -46,9 +46,7 @@ export default function Habilidades() {
   return (
     <section
       id="habilidades"
-      className="relative py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-hidden" 
-                      /* isso aqui é O DEGRADE COPIAR PARA OS PROXIMOS*/
-      
+      className="relative py-20 bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-hidden"
     >
       {/* Partículas animadas */}
       <Particles
@@ -108,15 +106,12 @@ export default function Habilidades() {
           >
             <h2 className="text-3xl font-bold mb-8 text-center text-gold">Front-end</h2>
             <div className="bg-gray-900 rounded-xl shadow-2xl overflow-hidden border-4 border-gray-700">
-              {/* Barra superior estilo monitor */}
               <div className="flex items-center gap-2 px-4 py-2 bg-gray-800">
                 <span className="w-3 h-3 rounded-full bg-red-500"></span>
                 <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
                 <span className="w-3 h-3 rounded-full bg-green-500"></span>
                 <span className="ml-auto text-sm text-gray-400">Frontend Skills</span>
               </div>
-
-              {/* Conteúdo da tela */}
               <div className="p-6 bg-gradient-to-br from-pink-500/20 to-purple-600/20">
                 <motion.ul
                   initial={{ opacity: 0 }}
@@ -177,14 +172,11 @@ export default function Habilidades() {
                   </motion.div>
                 ))}
               </motion.div>
-
-              {/* efeito de cursor piscando */}
               <span className="absolute bottom-2 right-2 text-green-500 animate-pulse">
                 █
               </span>
             </div>
           </motion.div>
-          
         </div>
       </div>
     </section>
